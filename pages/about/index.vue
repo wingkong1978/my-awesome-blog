@@ -27,7 +27,11 @@ export default {
           this.story.content = event.story.content
         }
       } else {
-        window.location.reload(true)
+        // window.location.reload(true)
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true
+        })
       }
     })
   }
