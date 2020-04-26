@@ -15,7 +15,7 @@
               <v-card>
                 <nuxt-link
                   class="postlink"
-                  :to="blog.id"
+                  :to="post/blog.id"
                 >
                   <v-img
                     :src="blog.thumbnail"
