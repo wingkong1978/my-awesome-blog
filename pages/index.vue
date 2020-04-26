@@ -69,10 +69,17 @@
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
+            to="inspire/inspire"
           >
             Continue
           </v-btn>
+          <v-btn
+            color="primary"
+            nuxt
+            to="post/post">
+           posts
+          </v-btn>
+
         </v-card-actions>
       </v-card>
     </v-flex>
