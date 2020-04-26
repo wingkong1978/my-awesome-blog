@@ -69,14 +69,14 @@
           <v-btn
             color="primary"
             nuxt
-            to="inspire/inspire"
+            to="inspire"
           >
             Continue
           </v-btn>
           <v-btn
             color="primary"
             nuxt
-            to="post/post">
+            to="post">
            posts
           </v-btn>
 
