@@ -1,5 +1,5 @@
+const axios = require('axios')
 const colors = require('vuetify/es5/util/colors').default
-
 module.exports = {
   mode: 'universal',
   /*
@@ -50,6 +50,21 @@ module.exports = {
       cacheProvider: 'memory'
     }]
   ],
+  generate: {
+
+    routes () {
+      return axios.get('https://api.storyblok.com/v1/cdn/stories?version=published&token=oI51y0riayXdTBOTrojD9Qtt&starts_with=post&cv=' + Math.floor(Date.now() / 1e3))
+        .then((res) => {
+          const blogPosts = res.data.stories.map(n => n.full_slug)
+          return [
+            '/',
+            '/post',
+            '/about',
+            ...blogPosts
+          ]
+        })
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
