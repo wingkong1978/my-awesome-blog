@@ -5,11 +5,6 @@
       fixed
       app
     >
-      <v-toolbar-title
-        nuxt
-        to="/"
-        v-text="title"
-      />
       <v-btn
         icon
         nuxt
@@ -17,6 +12,11 @@
       >
         <v-icon>mdi-home</v-icon>
       </v-btn>
+      <v-toolbar-title
+        nuxt
+        to="/"
+        v-text="title"
+      />
       <v-spacer />
 
       <v-btn
@@ -27,7 +27,7 @@
         My Post
       </v-btn>
       <v-menu
-        bottom
+        offset-y
       >
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">
