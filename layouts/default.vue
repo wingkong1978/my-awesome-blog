@@ -5,19 +5,47 @@
       fixed
       app
     >
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title
+        nuxt
+        to="/"
+        v-text="title"
+      />
+      <v-btn
+        icon
+        nuxt
+        to="/"
+      >
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
       <v-spacer />
 
-      <nav>
-        <ul>
-          <li>
-            test1
-          </li>
-          <li>
-            test2
-          </li>
-        </ul>
-      </nav>
+      <v-btn
+        color="primary"
+        nuxt
+        to="post"
+      >
+        My Post
+      </v-btn>
+      <v-menu
+        bottom
+      >
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <nuxt-link
+            to="/about"
+            class="aboutlink"
+          >
+            <v-list-item>
+              <v-list-item-title>About</v-list-item-title>
+            </v-list-item>
+          </nuxt-link>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-content>
       <v-container>
@@ -28,7 +56,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ new Date().getFullYear() }} by Johnny Zheng</span>
     </v-footer>
   </v-app>
 </template>
@@ -55,7 +83,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Wingkong\'s Home'
     }
   }
 }
@@ -63,5 +91,9 @@ export default {
 <style>
   * {
     box-sizing: border-box;
+  }
+
+  .aboutlink {
+    text-decoration: none;
   }
 </style>
